@@ -1,0 +1,10 @@
+# The BIMI mark is frozen artwork. Its bytes must match what the CA validated,
+# so Git must never rewrite line endings in this repository.
+#
+# Without this, Git for Windows (core.autocrlf=true by default) rewrites the
+# 6 LF bytes in logo.svg to CRLF on checkout. That makes the file 1682 bytes
+# instead of 1676 and changes its SHA-256 completely, which invalidates the
+# certified artwork and silently kills the inbox logo.
+
+* -text
+logo.svg binary
